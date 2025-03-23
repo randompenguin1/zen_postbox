@@ -2,7 +2,7 @@
 
 This is a Friendica add-on that adds a Jot Plugin tool button to the Compose editor allowing users to easily select any of the "Postbox" color backgrounds.
 
-Postbox color backgrounds are similar to a Facebook feature for text-only posts, except Friendica's allows any arbitrary content and users may have more than on Postbox per post.
+Postbox color backgrounds are similar to a Facebook feature for text-only posts, except Friendica's allows any arbitrary content and users may have more than on Postbox per post. Support for Postbox is built into the Bookface 1.6+ scheme for Frio, but this addon will enable it regardless of what theme/scheme is being used.
 
 This add-on also adds support for displaying Postbox content in all feeds no matter what theeme is in use.
 
