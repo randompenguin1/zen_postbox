@@ -31,7 +31,7 @@ If no text is selected in the editor a Postbox will be appeneded to the text are
 
 ## Changelog
 1.0 (23 March 2025)
-* Initial Release
+* Initial Release for Friendica 'Interrupted Fern' 2024.12
 
 ## Authors and acknowledgment
 Random Penguin <https://gitlab.com/randompenguin>
