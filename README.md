@@ -48,7 +48,8 @@ BBcodes that do not work as intended inside a Postbox:
 
 The text will show but will be styled and centered.
 
-BBcodes that **DO WORK** inside a Postbox:
+BBcodes that **CAN BE INSIDE** a Postbox:
+* [i], [b], [u], [o], [s] _(bold has no visible effect)_
 * [url]
 * [img]
 * [audio]
