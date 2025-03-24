@@ -30,7 +30,7 @@ If no text is selected in the editor a Postbox will be appeneded to the text are
 - Postboxes are not shown in third-party apps (at least none do yet)
 
 ## Changelog
-1.0 (23 March 2025)
+1.0 (24 March 2025)
 * Initial Release for Friendica 'Interrupted Fern' 2024.12
 
 ## Authors and acknowledgment
