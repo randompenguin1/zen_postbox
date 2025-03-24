@@ -17,6 +17,13 @@
 		padding: 50px 30px;
 		box-sizing: border-box;
 	}
+		[class^="postbox-"] a {
+			color: inherit !important;
+		}
+			[class^="postbox-"]:hover a,
+			[class^="postbox-"]:focus a {
+				text-decoration: underline;
+			}
 		/* Solid Color Backgrounds */
 		.postbox-black {
 			background-color: black;
