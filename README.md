@@ -35,6 +35,7 @@ BBcodes you CANNOT put inside a Postbox:
 * [h1],[h2],[h3], etc…
 * [table],[tr],[th],[td]
 * [list],[ul],[ol]
+* [quote]
 * [abstract]
 * [spoiler]
 * [map]
