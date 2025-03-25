@@ -66,7 +66,7 @@ If you are using Markdown formatting what you can and can’t put in a Postbox i
 - Postboxes are not shown in third-party apps (at least none do yet)
 
 ## Changelog
-1.0 (24 March 2025)
+1.0 (25 March 2025)
 * Initial Release for Friendica 'Interrupted Fern' 2024.12
 
 ## Authors and acknowledgment
