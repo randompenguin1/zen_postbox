@@ -106,15 +106,15 @@ function zen_postbox_jot_tool(string &$body)
 	$s .= '</div>';
 
 	//Add control css to header
-	$css_file = __DIR__ . '/view/' . DI::app()->getCurrentTheme() . '.css';
+	$css_file = __DIR__ . '/view/' . DI::app()->getCurrentTheme() . '.min.css';
 	if (!file_exists($css_file)) {
-		$css_file = __DIR__ . '/view/default.css';
+		$css_file = __DIR__ . '/view/default.min.css';
 	}
 
 	DI::page()->registerStylesheet($css_file);
 	
 	// Add zen_postbox Styling to Header
-	$box_styles = __DIR__ . '/view/postbox.css';
+	$box_styles = __DIR__ . '/view/postbox.min.css';
 	DI::page()->registerStylesheet($box_styles);
 
 	//Get the correct image for the theme
