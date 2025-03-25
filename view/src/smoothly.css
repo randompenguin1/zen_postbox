@@ -1,0 +1,63 @@
+#profile-postbox-wrapper {
+	display: block;
+}
+
+#postboxbutton {
+	display: none;
+	position: fixed;
+	background-color: #eee;
+	width: auto;
+	width: fit-content;
+	border-radius: 8px;
+	padding: 10px;
+	z-index: 99;
+	box-shadow: 0 0 5px rgba(0,0,0,.7);
+}
+
+.postbox_button > img {
+	height: 22px;
+	width: 22px;
+	position: relative;
+	margin: 4px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+}
+
+div.preview-postbox div.pick-postbox {
+	height: 100%;
+	width:  100%;
+	display: block;
+}
+
+div.preview-postbox > button {
+    ms-appearance: none;
+	moz-appearance: none;
+	webkit-appearance: none;
+	appearance: none;
+	cursor: pointer;
+	height: 32px;
+	width:  32px;
+	margin:  5px;
+	float: left;
+	border-radius: 8px;
+	margin: 0 5px 5px 0;
+	background: none;
+	border: none;
+	padding: 0;
+	overflow: hidden;
+}
+/* fix positioning if more than one jot tool */
+#profile-jot-plugin-wrapper {
+	padding: 10px 1px;
+}
+/* fix positioning if more than one jot tool */
+.jotplugins > div,
+#profile-jot-plugin-wrapper > div {
+	float: left;
+}
+	.jotplugins::after,
+	#profile-jot-plugin-wrapper::after {
+		content: '';
+		display: block;
+		clear: both;
+	}
