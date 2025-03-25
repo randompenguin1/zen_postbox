@@ -1,0 +1,60 @@
+#profile-postbox-wrapper {
+	float: left;
+	margin-left: 15px;
+	cursor: pointer;
+	height: 10px;
+	display: inline-block;
+}
+
+#profile-postbox-wrapper .btn {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	background: none;
+	width: 20px;
+	height: 20px;
+	line-height: inherit;
+	display: inline-block;
+	overflow: hidden;
+	padding: 1px;
+	color: #999;
+	vertical-align: text-top;
+}
+
+#postboxbutton {
+	position: absolute;
+	z-index: 99;
+	display: none;
+	padding: 10px;
+	background-color: #FFF;
+	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.7);
+}
+
+.postbox_button > img {
+	height: 18px;
+	width: 18px;
+	margin-right: 18px;
+}
+div.preview-postbox div.pick-postbox {
+	height: 100%;
+	width:  100%;
+	display: block;
+}
+
+div.preview-postbox > button {
+    ms-appearance: none;
+	moz-appearance: none;
+	webkit-appearance: none;
+	appearance: none;
+	cursor: pointer;
+	height: 32px;
+	width:  32px;
+	margin:  5px;
+	float: left;
+	border-radius: 8px;
+	margin: 0 5px 5px 0;
+	background: none;
+	border: none;
+	padding: 0;
+	overflow: hidden;
+}
