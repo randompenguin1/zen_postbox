@@ -52,3 +52,26 @@ div.preview-postbox > button {
 	padding: 0;
 	overflow: hidden;
 }
+/* handle patterns and animations */
+div.preview-postbox > button:hover,
+div.preview-postbox > button:focus {
+  position: relative;
+  z-index: 10;
+  transform-origin: center;
+  transform: scale(2);
+}
+
+div.pick-postbox {
+  height: 320px !important;
+  width:  320px !important;;
+  transform-origin: top left;
+  transform: scale(.1);
+}
+div.pick-postbox, div.pick-postbox::before, div.pick-postbox::after {
+  animation-play-state: paused;
+}
+
+div.pick-postbox:hover, div.pick-postbox:hover::before, div.pick-postbox:hover::after,
+button:focus div.pick-postbox, button:focus div.pick-postbox::before, button:focus div.pick-postbox::after {
+  animation-play-state: running;
+}
