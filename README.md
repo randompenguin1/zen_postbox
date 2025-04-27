@@ -6,6 +6,8 @@ Postbox color backgrounds are similar to a Facebook feature for text-only posts,
 
 This add-on also adds support for displaying Postbox content in all feeds no matter what theeme is in use.
 
+**Animated backgrounds are ONLY available on servers that have either the _Postbox_ or _Zen Postbox_ add-on installed**
+
 _**Note**: It has "zen" on the beginning of the name just to make the add-on load AFTER other Jot Plugins. In particular the "Smileybutton" add-on which has a typo that clears any Jot Plugins that load before it._
 
 ## Getting started
@@ -23,6 +25,8 @@ _**Note**: It has "zen" on the beginning of the name just to make the add-on loa
 5. Press the "Preview" tab to see what it will look like.
 
 If no text is selected in the editor a Postbox will be appeneded to the text area with "..." for content. Replace the "..." with your text, etc.
+
+There is a visual reference of available styles at: _/addon/postbox/view/sampler.htm_
 
 While Postbox allows more content than the Facebook version (which is text only), there are limitations due to how Friendica parses BBcode.
 
@@ -64,8 +68,18 @@ If you are using Markdown formatting what you can and can’t put in a Postbox i
 
 - Postboxes are not shown on other platforms when your post is shared.
 - Postboxes are not shown in third-party apps (at least none do yet)
+- Some of the animated backgrounds have glitches in older WebKit browsers
+- Currently Postbox BBcode is not parsed correctly by either Diaspora or Hubzilla
 
 ## Changelog
+1.1 (28 April 2025)
+* Changed names of solid colors to match HTML named colors
+* Added 24 new solid colors.
+* Added 5 new gradient backgrounds.
+* Added 17 new pattern and 11 animated backgrounds.
+* Fixed load-order for main stylesheet [Issue #1]
+
+
 1.0 (25 March 2025)
 * Initial Release for Friendica 'Interrupted Fern' 2024.12
 
