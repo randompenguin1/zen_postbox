@@ -2,7 +2,7 @@
 /**
  * Name: Zen Postbox
  * Description: Adds a button to editor to insert color background. Called Zen to load last.
- * Version: 1.0
+ * Version: 1.1
  * Author: Random Penguin <https://gitlab.com/randompenguin>
  */
 
@@ -20,88 +20,95 @@ function zen_postbox_jot_tool(string &$body)
 {
 	
 	$labels = [
-		'Black',
-		'Red',
-		'Green',
-		'Blue',
-		'Orange',
-		'Purple',
-		'Forest',
-		'Ocean',
-		'Pink',
-		'Salmon',
-		'Dark Gray',
-		'Minty',
-		'Mint Gray',
-		'Red-Blue',
-		'Violets',
-		'Gray-Black',
-		'Teal Blue',
-		'Green Gray',
-		'Teal Gray',
-		'Blue Gray',
-		'Lavender Gray',
-		'Sunset',
-		'Sherbert',
+		['White Smoke', 'whitesmoke'],
+		['Dark Grey', 'darkgrey'],
+		['Black', 'black'],
+		['Pink', 'pink'],
+		['Red', 'red'],
+		['Dark Red', 'darkred'],
+		['Light Pink', 'lightpink'],
+		['Hot Pink', 'hotpink'],
+		['Medium Violet Red', 'mediumvioletred'],
+		['Peach Puff', 'peachpuff'],
+		['Dark Orange (Orange)', 'darkorange'],
+		['Sienna', 'sienna'],
+		['Light Yellow', 'lightyellow'],
+		['Gold', 'gold'],
+		['Goldenrod', 'goldenrod'],
+		['Honeydew', 'honeydew'],
+		['Yellow Green', 'yellowgreen'],
+		['Olive Drab', 'olivedrab'],
+		['Pale Green', 'palegreen'],
+		['Lime Green (Green)', 'limegreen'],
+		['Forest Green (Forest)', 'forestgreen'],
+		['Mint Cream', 'mintcream'],
+		['Medium Aquamarine', 'mediumaquamarine'],
+		['Sea Green', 'seagreen'],
+		['Sky Blue', 'skyblue'],
+		['Cornflower Blue (Blue)', 'cornflowerblue'],
+		['Dark Slate Blue', 'darkslateblue'],
+		['Lavender', 'lavender'],
+		['Medium Slate Blue', 'mediumslateblue'],
+		['Dark Blue (Ocean)', 'darkblue'],
+		['Thistle', 'thistle'],
+		['Violet', 'violet'],
+		['Purple', 'purple'],
+		['Light Salmon (Salmon)', 'lightsalmon'],
+
+		['Aurora', 'aurora'],
+		['Blue-Gray', 'bluegray'],
+		['Gray-Grey', 'graygrey'],
+		['Gray-Black', 'grayblack'],
+		['Green-Gray', 'greengray'],
+		['Lavender-Gray', 'lavendergray'],
+		['Minty', 'minty'],
+		['Mint-Gray', 'mintgray'],
+		['Rainbow', 'rainbow'],
+		['Red-Blue', 'redblue'],
+		['Sherbet', 'sherbet'],
+		['Spectrum', 'spectrum'],
+		['Strawberry-Cream', 'strawberrycream'],
+		['Sunset', 'sunset'],
+		['Teal-Blue', 'tealblue'],
+		['Teal-Gray', 'tealgray'],
+		['Violets', 'violets'],
+		['Violet-Blue', 'violetblue'],
+
+		['Blueprint', 'blueprint'],
+		['Birds', 'birds'],
+		['Checkered', 'checkered'],
+		['Cubes', 'cubes'],
+		['Lemon-Lime', 'lemonlime'],
+		['Gingham', 'gingham'],
+		['Grid', 'grid'],
+		['Hearts', 'hearts'],
+		['Honeycomb', 'honeycomb'],
+		['Notebook', 'notebook'],
+		['Plaid', 'plaid'],
+		['Polkadots', 'polkadots'],
+		['Shade Dots', 'shadedots'],
+		['Shadowbox', 'shadowbox'],
+		['Stars', 'stars'],
+		['Warp Grid', 'warpgrid'],
+		['Wavy', 'wavy'],
+
+		['Ani-Gradient', 'anigradient'],	
+		['Blob', 'blob'],
+		['Color Fade', 'colorfade'],
+		['Grid Runner', 'gridrunner'],	
+		['Heartbeat', 'heartbeat'],
+		['Moonrise', 'moonrise'],
+		['Rainy', 'rainy'],
+		['Rocket', 'rocket'],
+		['Snowy', 'snowy'],
+		['Sunrise', 'sunrise'],
+		['Waves', 'waves'],
 	];
 
-	$texts = [
-		'[class=postbox-black]',
-		'[class=postbox-red]',
-		'[class=postbox-green]',
-		'[class=postbox-blue]',
-		'[class=postbox-orange]',
-		'[class=postbox-purple]',
-		'[class=postbox-forest]',
-		'[class=postbox-ocean]',
-		'[class=postbox-pink]',
-		'[class=postbox-salmon]',
-		'[class=postbox-darkgray]',
-		'[class=postbox-minty]',
-		'[class=postbox-mintgray]',
-		'[class=postbox-redblue]',
-		'[class=postbox-violets]',
-		'[class=postbox-grayblack]',
-		'[class=postbox-tealblue]',
-		'[class=postbox-greengray]',
-		'[class=postbox-tealgray]',
-		'[class=postbox-bluegray]',
-		'[class=postbox-lavendergray]',
-		'[class=postbox-sunset]',
-		'[class=postbox-sherbert]',
-	];
-
-	$icons = [
-		'<div class="pick-postbox postbox-black"></div>',
-		'<div class="pick-postbox postbox-red"></div>',
-		'<div class="pick-postbox postbox-green"></div>',
-		'<div class="pick-postbox postbox-blue"></div>',
-		'<div class="pick-postbox postbox-orange"></div>',
-		'<div class="pick-postbox postbox-purple"></div>',
-		'<div class="pick-postbox postbox-forest"></div>',
-		'<div class="pick-postbox postbox-ocean"></div>',
-		'<div class="pick-postbox postbox-pink"></div>',
-		'<div class="pick-postbox postbox-salmon"></div>',
-		'<div class="pick-postbox postbox-darkgray"></div>',
-		'<div class="pick-postbox postbox-minty"></div>',
-		'<div class="pick-postbox postbox-mintgray"></div>',
-		'<div class="pick-postbox postbox-redblue"></div>',
-		'<div class="pick-postbox postbox-violets"></div>',
-		'<div class="pick-postbox postbox-grayblack"></div>',
-		'<div class="pick-postbox postbox-tealblue"></div>',
-		'<div class="pick-postbox postbox-greengray"></div>',
-		'<div class="pick-postbox postbox-tealgray"></div>',
-		'<div class="pick-postbox postbox-bluegray"></div>',
-		'<div class="pick-postbox postbox-lavendergray"></div>',
-		'<div class="pick-postbox postbox-sunset"></div>',
-		'<div class="pick-postbox postbox-sherbert"></div>',
-	];
-	$params = ['texts' => $texts, 'icons' => $icons, 'string' => '', 'labels' => $labels];
-	//Generate html for smiley list
+	// Generate Postbox Buttons
 	$s = '<div class="preview-postbox"><tr>';
-	for ($x = 0; $x < count($params['texts']); $x++) {
-		$icon = $params['icons'][$x];
-		$s .= '<button type="button" title="' . $params['labels'][$x] . '" onclick="postbox_addbox(\'' . $params['texts'][$x] . '\')">' . $icon . '</button>';
+	for ($x = 0; $x < count($labels); $x++){
+		$s .= '<button type="button" title="' . $labels[$x][0] . '" onclick="postbox_addbox(\'[class=postbox-' . $labels[$x][1] . ']\')"><div class="pick-postbox postbox-' . $labels[$x][1] . '"></div></button>';
 	}
 	$s .= '</div>';
 
@@ -113,10 +120,16 @@ function zen_postbox_jot_tool(string &$body)
 
 	DI::page()->registerStylesheet($css_file);
 	
-	// Add zen_postbox Styling to Header
-	$box_styles = __DIR__ . '/view/postbox.min.css';
-	DI::page()->registerStylesheet($box_styles);
-
+		/* Add Postbox Styling to Header
+		   DI::page()->registerStylesheet($path) might load before theme
+		   so we will append with DI::page()['htmlhead'] to make it load much much later
+		*/
+		$path = __DIR__ . '/view/postbox.min.css?v=' . DI::app()::VERSION;	
+		if (mb_strpos($path, DI::basePath() . DIRECTORY_SEPARATOR) === 0) {
+			$path = mb_substr($path, mb_strlen(DI::basePath() . DIRECTORY_SEPARATOR));
+		}
+		DI::page()['htmlhead'] .= '<link rel="stylesheet" href="'.$path.'" media="screen"/>';
+		
 	//Get the correct image for the theme
 		$image = 'addon/zen_postbox/view/default.png';
 
