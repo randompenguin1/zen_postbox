@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Friendica Postboxes</title>
+		<link rel="stylesheet" href="postbox.min.css"/>
+		<style type="text/css">
+			body {
+				font-family: Arial, sans-serif;
+			}
+			h1 {
+				text-align: center;
+			}
+			h2 {
+				clear: both;
+			}
+			body > div {
+				height: 300px !important;
+				width:  300px !important;
+				border-radius: 50px;
+				margin: 10px;
+				float: left;
+				overflow: hidden;
+			}
+			div > div {
+				height: 300px !important;
+			}
+			.code {
+				background-color: black;
+				font-family: "Courier New", Courier, monospace;
+				color: lime;
+				display: inline-block;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<h1>Friendica Postboxes</h1>
+		
+		<p><strong>What are "Postboxes"?</strong> Facebook has a feature offering colorful backgrounds 
+		for short, text-only posts. Postboxes for Friendica offers something similar, but it is not 
+		limited to short or text-only posts (though it still works best with those). Friendica's gradient and 
+		pattern backgrounds, however, are accomplished with pure CSS (no images), and are 
+		therefore very fast and lightweight.</p>
+		
+		<p><strong>How to use:</strong> Put your text/content inside the "class" BBcode like so:
+		<span class="code">[class=postbox-name]Your Text Here[/class]</span><br/>
+		Type the name in all lowercase letters with no spaces. Each sample below shows the name. 
+		Some also show the old names in parenthesis, which are still valid and have been mapped 
+		to the new styles. If a style is not available on a given server, or if you misspell the name, 
+		the "default" style will be used (inherited font color against theme's post background color).</p>
+		
+		<p><strong>Limitations:</strong> Requires either using the "Frio" theme with the "Bookface" scheme, or 
+		the "Postbox" add-on be installed, or the "Zen Postbox" add-on be installed. Postboxes shared to servers 
+		without them see only the un-styled content fo the Postbox, this includes other platforms like Mastodon, 
+		Bluesky, Tumblr, etc. <strong>Note that there are currently issues with how Postboxes display 
+		in posts shared to Diaspora and Hubzilla.</strong></p>
+		
+		<p><strong style="color:red;">The animated backgrounds shown below are only available if either the "Postbox" or "Zen Postbox" 
+		add-on is installed on the server.</strong></p>
+		
+		<h2>Solid Colors</h2>
+		<div><div class="postbox-undefined">Default</div></div>
+		<div><div class="postbox-black">Black</div></div>
+		<div><div class="postbox-cornflowerblue">CornflowerBlue (Blue)</div></div>
+		<div><div class="postbox-darkblue">DarkBlue (Ocean)</div></div>
+		<div><div class="postbox-darkgrey">DarkGrey</div></div>
+		<div><div class="postbox-darkorange">DarkOrange (Orange)</div></div>
+		<div><div class="postbox-darkred">DarkRed</div></div>
+		<div><div class="postbox-darkslateblue">DarkSlateBlue</div></div>
+		<div><div class="postbox-forestgreen">ForestGreen (Forest)</div></div>
+		<div><div class="postbox-gold">Gold</div></div>
+		<div><div class="postbox-goldenrod">Goldenrod</div></div>
+		<div><div class="postbox-honeydew">Honeydew</div></div>
+		<div><div class="postbox-hotpink">Hotpink</div></div>
+		<div><div class="postbox-lavender">Lavender</div></div>
+		<div><div class="postbox-lightpink">LightPink</div></div>
+		<div><div class="postbox-lightyellow">LightYellow</div></div>
+		<div><div class="postbox-limegreen">LimeGreen (Green)</div></div>
+		<div><div class="postbox-lightsalmon">LightSalmon (Salmon)</div></div>
+		<div><div class="postbox-mediumaquamarine">MediumAquaMarine</div></div>
+		<div><div class="postbox-mediumslateblue">MediumSlateBlue</div></div>
+		<div><div class="postbox-mediumvioletred">MediumVioletRed</div></div>
+		<div><div class="postbox-mintcream">MintCream</div></div>
+		<div><div class="postbox-olivedrab">OliveDrab</div></div>
+		<div><div class="postbox-palegreen">PaleGreen</div></div>
+		<div><div class="postbox-peachpuff">PeachPuff</div></div>
+		<div><div class="postbox-pink">Pink</div></div>
+		<div><div class="postbox-purple">Purple</div></div>
+		<div><div class="postbox-red">Red</div></div>
+		<div><div class="postbox-seagreen">SeaGreen</div></div>
+		<div><div class="postbox-sienna">Sienna</div></div>
+		<div><div class="postbox-skyblue">SkyBlue</div></div>
+		<div><div class="postbox-thistle">Thistle</div></div>
+		<div><div class="postbox-violet">Violet</div></div>
+		<div><div class="postbox-whitesmoke">WhiteSmoke</div></div>
+		<div><div class="postbox-yellowgreen">YellowGreen</div></div>
+		
+		<h2>Gradients</h2>
+		<div><div class="postbox-aurora">Aurora</div></div>
+		<div><div class="postbox-bluegray">BlueGray</div></div>
+		<div><div class="postbox-graygrey">GrayGrey (DarkGray)</div></div>
+		<div><div class="postbox-grayblack">GrayBlack</div></div>
+		<div><div class="postbox-greengray">GreenGray</div></div>
+		<div><div class="postbox-lavendergray">LavenderGray</div></div>
+		<div><div class="postbox-minty">Minty</div></div>
+		<div><div class="postbox-mintgray">MintGray</div></div>
+		<div><div class="postbox-rainbow">Rainbow</div></div>
+		<div><div class="postbox-redblue">RedBlue</div></div>
+		<div><div class="postbox-sherbet">Sherbet (Sherbert)</div></div>
+		<div><div class="postbox-spectrum">Spectrum</div></div>
+		<div><div class="postbox-strawberrycream">StrawberryCream</div></div>
+		<div><div class="postbox-sunset">Sunset</div></div>
+		<div><div class="postbox-tealblue">TealBlue</div></div>
+		<div><div class="postbox-tealgray">TealGray</div></div>
+		<div><div class="postbox-violets">Violets</div></div>
+		<div><div class="postbox-violetblue">VioletBlue</div></div>
+		
+		<h2>Patterns</h2>
+		<div><div class="postbox-blueprint">Blueprint</div></div>
+		<div><div class="postbox-birds">Birds</div></div>
+		<div><div class="postbox-checkered">Checkered</div></div>
+		<div><div class="postbox-cubes">Cubes</div></div>
+		<div><div class="postbox-lemonlime">LemonLime</div></div>
+		<div><div class="postbox-gingham">Gingham</div></div>
+		<div><div class="postbox-grid">Grid</div></div>
+		<div><div class="postbox-hearts">Hearts</div></div>
+		<div><div class="postbox-honeycomb">Honeycomb</div></div>
+		<div><div class="postbox-notebook">Notebook</div></div>
+		<div><div class="postbox-plaid">Plaid</div></div>
+		<div><div class="postbox-polkadots">Polkadots</div></div>
+		<div><div class="postbox-shadedots">ShadeDots</div></div>
+		<div><div class="postbox-shadowbox">Shadowbox</div></div>
+		<div><div class="postbox-stars">Stars</div></div>
+		<div><div class="postbox-warpgrid">WarpGrid</div></div>
+		<div><div class="postbox-wavy">Wavy</div></div>
+		
+		<h2>Animated</h2>
+		<p style="clear:both;">These are only available if either the "Postbox" or "Zen Postbox" 
+		add-on is installed on the Friendica server.</p>
+		<div><div class="postbox-anigradient">Anigradient</div></div>
+		<div><div class="postbox-blob">Blob</div></div>
+		<div><div class="postbox-colorfade">ColorFade</div></div>
+		<div><div class="postbox-gridrunner">GridRunner</div></div>
+		<div><div class="postbox-heartbeat">Heartbeat</div></div>
+		<div><div class="postbox-moonrise">Moonrise</div></div>
+		<div><div class="postbox-rainy">Rainy</div></div>
+		<div><div class="postbox-rocket">Rocket</div></div>
+		<div><div class="postbox-snowy">Snowy</div></div>
+		<div><div class="postbox-sunrise">Sunrise</div></div>
+		<div><div class="postbox-waves">Waves</div></div>	
+	</body>
+</html>
