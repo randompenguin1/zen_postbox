@@ -4,6 +4,7 @@
 
 #postboxbutton {
 	display: none;
+	margin-left: 10px;
 }
 
 .postbox_button > img {
@@ -31,7 +32,30 @@ div.preview-postbox > button {
 	border-radius: 8px;
 	margin: 0 5px 5px 0;
 	background: none;
-	border: none;
+	border: 1px solid #ccc;
 	padding: 0;
 	overflow: hidden;
+}
+/* handle patterns and animations */
+div.preview-postbox > button:hover,
+div.preview-postbox > button:focus {
+  position: relative;
+  z-index: 10;
+  transform-origin: center;
+  transform: scale(2);
+}
+
+div.pick-postbox {
+  height: 320px !important;
+  width:  320px !important;;
+  transform-origin: top left;
+  transform: scale(.1);
+}
+div.pick-postbox, div.pick-postbox::before, div.pick-postbox::after {
+  animation-play-state: paused;
+}
+
+div.pick-postbox:hover, div.pick-postbox:hover::before, div.pick-postbox:hover::after,
+button:focus div.pick-postbox, button:focus div.pick-postbox::before, button:focus div.pick-postbox::after {
+  animation-play-state: running;
 }
