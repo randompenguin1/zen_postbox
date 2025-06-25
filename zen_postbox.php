@@ -2,7 +2,7 @@
 /**
  * Name: Zen Postbox
  * Description: Adds a button to editor to insert color background. Called Zen to load last.
- * Version: 1.1
+ * Version: 1.2
  * Author: Random Penguin <https://gitlab.com/randompenguin>
  */
 
@@ -124,7 +124,7 @@ function zen_postbox_jot_tool(string &$body)
 		   DI::page()->registerStylesheet($path) might load before theme
 		   so we will append with DI::page()['htmlhead'] to make it load much much later
 		*/
-		$path = __DIR__ . '/view/postbox.min.css?v=' . DI::app()::VERSION;	
+		$path = __DIR__ . '/view/postbox.min.css?v=1.2';	
 		if (mb_strpos($path, DI::basePath() . DIRECTORY_SEPARATOR) === 0) {
 			$path = mb_substr($path, mb_strlen(DI::basePath() . DIRECTORY_SEPARATOR));
 		}
