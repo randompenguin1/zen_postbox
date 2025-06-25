@@ -74,6 +74,7 @@ If you are using Markdown formatting what you can and can’t put in a Postbox i
 ## Changelog
 1.2 (24 June 2025)
 * Changed stylesheet URL so it no longer appends Friendica version but addon version. This also makes the addon compatible with the Friendica 2025 dev version.
+* Fixed missing images for animated backgrounds.
 
 1.1 (28 April 2025)
 * Changed names of solid colors to match HTML named colors
