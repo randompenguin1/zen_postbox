@@ -72,6 +72,10 @@ If you are using Markdown formatting what you can and can’t put in a Postbox i
 - Currently Postbox BBcode is not parsed correctly by either Diaspora or Hubzilla
 
 ## Changelog
+1.3 (12 July 2025)
+* Fixed issue where postboxes only worked on pages with Compose modal, they now work sitewide.
+* Code updates for compatibility with Friendica 2025.7 Release Candidate.
+
 1.2 (24 June 2025)
 * Changed stylesheet URL so it no longer appends Friendica version but addon version. This also makes the addon compatible with the Friendica 2025 dev version.
 * Fixed missing images for animated backgrounds.
