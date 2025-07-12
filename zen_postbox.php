@@ -2,18 +2,33 @@
 /**
  * Name: Zen Postbox
  * Description: Adds a button to editor to insert color background. Called Zen to load last.
- * Version: 1.2
+ * Version: 1.3
  * Author: Random Penguin <https://gitlab.com/randompenguin>
  */
 
 use Friendica\App;
+use Friendica\AppHelper;
 use Friendica\Core\Hook;
 use Friendica\DI;
 
 function zen_postbox_install()
 {
 	//Register hooks
-	Hook::register('jot_tool', 'addon/zen_postbox/zen_postbox.php', 'zen_postbox_jot_tool');
+	Hook::register('head', __FILE__, 'zen_postbox_head');
+	Hook::register('jot_tool', __FILE__, 'zen_postbox_jot_tool');
+}
+
+function zen_postbox_head(string &$b)
+{
+	/* Add Postbox Styling to Header
+	   DI::page()->registerStylesheet($path) might load before theme
+	   so we will append to $b to make it load much much later
+	*/
+	$path = __DIR__ . '/view/postbox.min.css?v=1.3';	
+	if (mb_strpos($path, DI::basePath() . DIRECTORY_SEPARATOR) === 0) {
+		$path = mb_substr($path, mb_strlen(DI::basePath() . DIRECTORY_SEPARATOR));
+	}
+	$b .= '<link rel="stylesheet" href="'.$path.'" media="screen"/>';
 }
 
 function zen_postbox_jot_tool(string &$body)
@@ -113,22 +128,19 @@ function zen_postbox_jot_tool(string &$body)
 	$s .= '</div>';
 
 	//Add control css to header
-	$css_file = __DIR__ . '/view/' . DI::app()->getCurrentTheme() . '.min.css';
+	if ( method_exists(DI::class, 'app') ){
+		$current_theme = DI::app()->getCurrentTheme();
+	} else if ( method_exists(DI::class, 'appHelper') ){
+		$current_theme = DI::appHelper()->getCurrentTheme();
+	} else {
+		$current_theme = 'default';
+	}
+	$css_file = __DIR__ . '/view/' . $current_theme . '.min.css';
 	if (!file_exists($css_file)) {
 		$css_file = __DIR__ . '/view/default.min.css';
 	}
 
 	DI::page()->registerStylesheet($css_file);
-	
-		/* Add Postbox Styling to Header
-		   DI::page()->registerStylesheet($path) might load before theme
-		   so we will append with DI::page()['htmlhead'] to make it load much much later
-		*/
-		$path = __DIR__ . '/view/postbox.min.css?v=1.2';	
-		if (mb_strpos($path, DI::basePath() . DIRECTORY_SEPARATOR) === 0) {
-			$path = mb_substr($path, mb_strlen(DI::basePath() . DIRECTORY_SEPARATOR));
-		}
-		DI::page()['htmlhead'] .= '<link rel="stylesheet" href="'.$path.'" media="screen"/>';
 		
 	//Get the correct image for the theme
 		$image = 'addon/zen_postbox/view/default.png';
