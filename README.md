@@ -72,6 +72,10 @@ If you are using Markdown formatting what you can and can’t put in a Postbox i
 - Currently Postbox BBcode is not parsed correctly by either Diaspora or Hubzilla
 
 ## Changelog
+1.4 (19 June 2026)
+* Fixed script error when plugin appears in Mention Modal
+* Switched stylesheet loading from `DI::page()->registerStylesheet()` to `Hook::register('head)` method because CSS was not loading in Mention Modal.
+
 1.3 (12 July 2025)
 * Fixed issue where postboxes only worked on pages with Compose modal, they now work sitewide.
 * Code updates for compatibility with Friendica 2025.7 Release Candidate.
