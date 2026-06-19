@@ -2,7 +2,7 @@
 /**
  * Name: Zen Postbox
  * Description: Adds a button to editor to insert color background. Called Zen to load last.
- * Version: 1.3
+ * Version: 1.4
  * Author: Random Penguin <https://gitlab.com/randompenguin>
  */
 
@@ -24,11 +24,28 @@ function zen_postbox_head(string &$b)
 	   DI::page()->registerStylesheet($path) might load before theme
 	   so we will append to $b to make it load much much later
 	*/
-	$path = __DIR__ . '/view/postbox.min.css?v=1.3';	
-	if (mb_strpos($path, DI::basePath() . DIRECTORY_SEPARATOR) === 0) {
-		$path = mb_substr($path, mb_strlen(DI::basePath() . DIRECTORY_SEPARATOR));
+	$postbox_styles = __DIR__ . '/view/postbox.min.css?v=1.3';	
+	if (mb_strpos($postbox_styles, DI::basePath() . DIRECTORY_SEPARATOR) === 0) {
+		$postbox_styles = mb_substr($postbox_styles, mb_strlen(DI::basePath() . DIRECTORY_SEPARATOR));
 	}
-	$b .= '<link rel="stylesheet" href="'.$path.'" media="screen"/>';
+	//Add theme css to header
+	if ( method_exists(DI::class, 'app') ){
+		$current_theme = DI::app()->getCurrentTheme();
+	} else if ( method_exists(DI::class, 'appHelper') ){
+		$current_theme = DI::appHelper()->getCurrentTheme();
+	} else {
+		$current_theme = 'default';
+	}	
+
+	$theme_css = __DIR__ . '/view/' . $current_theme . '.min.css';
+	if (!file_exists($theme_css)) {
+		$theme_css = __DIR__ . '/view/default.min.css';
+	}
+	if (mb_strpos($theme_css, DI::basePath() . DIRECTORY_SEPARATOR) === 0) {
+		$theme_css = mb_substr($theme_css, mb_strlen(DI::basePath() . DIRECTORY_SEPARATOR));
+	}
+
+	$b .= '<link rel="stylesheet" href="'.$postbox_styles.'" media="screen"/><link rel="stylesheet" href="'.$theme_css.'" media="screen"/>';
 }
 
 function zen_postbox_jot_tool(string &$body)
@@ -126,23 +143,8 @@ function zen_postbox_jot_tool(string &$body)
 		$s .= '<button type="button" title="' . $labels[$x][0] . '" onclick="postbox_addbox(\'[class=postbox-' . $labels[$x][1] . ']\')"><div class="pick-postbox postbox-' . $labels[$x][1] . '"></div></button>';
 	}
 	$s .= '</div>';
-
-	//Add control css to header
-	if ( method_exists(DI::class, 'app') ){
-		$current_theme = DI::app()->getCurrentTheme();
-	} else if ( method_exists(DI::class, 'appHelper') ){
-		$current_theme = DI::appHelper()->getCurrentTheme();
-	} else {
-		$current_theme = 'default';
-	}
-	$css_file = __DIR__ . '/view/' . $current_theme . '.min.css';
-	if (!file_exists($css_file)) {
-		$css_file = __DIR__ . '/view/default.min.css';
-	}
-
-	DI::page()->registerStylesheet($css_file);
 		
-	//Get the correct image for the theme
+	// Get the button icon
 		$image = 'addon/zen_postbox/view/default.png';
 
 	$image_url = DI::baseUrl() . '/' . $image;
@@ -155,7 +157,6 @@ function zen_postbox_jot_tool(string &$body)
 		$s
 		</div>
 	</div>
-
 	<script>
 		// store states
 		var postboxbutton_is_shown = 0;
@@ -175,12 +176,7 @@ function zen_postbox_jot_tool(string &$body)
 		}
 		// get textarea selected text (if any)
 		function postbox_selection(){
-			// modal or compose?
-			if (document.getElementsByTagName('body')[0].className.match(/mod-compose/)){
-				area = document.getElementById('comment-edit-text-0');
-			} else {
-				area = document.getElementById('profile-jot-text');
-			}
+			area = document.getElementById('profile-jot-text') || document.getElementById('comment-edit-text-0');
 			var val = area.value;
 			sel_start = area.selectionStart;
 			sel_end   = area.selectionEnd;
@@ -202,7 +198,7 @@ function zen_postbox_jot_tool(string &$body)
 			// close background box and shift focus back to textarea
 			toggle_postboxbutton();
 			area.focus();
-		}		
+		}	
 	</script>
 EOT;
 }
