@@ -37,9 +37,9 @@ function zen_postbox_head(string &$b)
 		$current_theme = 'default';
 	}	
 
-	$theme_css = __DIR__ . '/view/' . $current_theme . '.min.css';
+	$theme_css = __DIR__ . '/view/' . $current_theme . '.min.css?v=1.4';
 	if (!file_exists($theme_css)) {
-		$theme_css = __DIR__ . '/view/default.min.css';
+		$theme_css = __DIR__ . '/view/default.min.css?v=1.4';
 	}
 	if (mb_strpos($theme_css, DI::basePath() . DIRECTORY_SEPARATOR) === 0) {
 		$theme_css = mb_substr($theme_css, mb_strlen(DI::basePath() . DIRECTORY_SEPARATOR));
