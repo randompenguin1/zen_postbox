@@ -37,15 +37,15 @@ function zen_postbox_head(string &$b)
 		$current_theme = 'default';
 	}	
 
-	$theme_css = __DIR__ . '/view/' . $current_theme . '.min.css?v=1.4';
+	$theme_css = __DIR__ . '/view/' . $current_theme . '.min.css';
 	if (!file_exists($theme_css)) {
-		$theme_css = __DIR__ . '/view/default.min.css?v=1.4';
+		$theme_css = __DIR__ . '/view/default.min.css';
 	}
 	if (mb_strpos($theme_css, DI::basePath() . DIRECTORY_SEPARATOR) === 0) {
 		$theme_css = mb_substr($theme_css, mb_strlen(DI::basePath() . DIRECTORY_SEPARATOR));
 	}
 
-	$b .= '<link rel="stylesheet" href="'.$postbox_styles.'" media="screen"/><link rel="stylesheet" href="'.$theme_css.'" media="screen"/>';
+	$b .= '<link rel="stylesheet" href="'.$postbox_styles.'" media="screen"/><link rel="stylesheet" href="'.$theme_css.'v=1.4" media="screen"/>';
 }
 
 function zen_postbox_jot_tool(string &$body)
